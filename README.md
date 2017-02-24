@@ -6,7 +6,7 @@ The Kagi chart is a chart used for tracking price movements and to make decision
 It is one of the various charts that investors use to make better decisions about stocks. The most important benefit of this chart is that it is independent of time and change of direction occurs only when a specific amount is reached.
 It was originally developed in Japan during the 1870s when the Japanese stock market started trading. It was used for tracking the price movement of rice and found use in determining the general levels of supply and demand for certain assets.
 
-Check out a [Kagi Implementation](https://arpitnarechania.github.io/d3-kagi/) where you can test various configuration options.
+Check out an [Example](https://arpitnarechania.github.io/d3-kagi/) where you can test various configuration options.
 
 # Installation
 
@@ -121,6 +121,11 @@ Setting chart parameters
 | `animationEase`            | The common animation easing functions                                            | string   | `'linear'` (default)          | 
 | `animationDurationPerTrend`| The duration in which a trend must be animated                            | number   | `500`                         | 
 | `showAnimation`            | Whether to show animation or not.                                         | bool     | `true`                        |
+
+# Author
+
+Arpit Narechania
+arpitnarechania@gmail.com
 
 # License
 
