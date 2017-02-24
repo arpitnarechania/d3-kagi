@@ -1,0 +1,27 @@
+{
+  "name": "d3-kagi",
+  "homepage": "https://github.com/arpitnarechania/d3-kagi",
+  "authors": [
+    "Arpit Narechania <arpitnarechania@gmail.com>"
+  ],
+  "description": "Open Source JavaScript Library to render Kagi Charts using D3.js",
+  "main": "",
+  "keywords": [
+    "kagi",
+    "kagi-charts",
+    "d3",
+    "d3.js",
+    "visualization",
+    "charts",
+    "open-source",
+    "stock-prices"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

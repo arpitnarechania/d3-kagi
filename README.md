@@ -16,19 +16,12 @@ Download d3-kagi using bower.
 bower install d3-kagi --save
 ```
 
-Download d3.js or source it over CDN.
-
-```
-https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js
-
-```
-
 To use this library then, simply include d3.js, kagi.js and kagi.css:
 
 ``` html
-<script src="/path/to/d3.v3.js"></script>
-<script src="/path/to/dist/kagi.js"></script>
+<script src="/path/to/d3.min.js"></script>
 <script src="/path/to/dist/kagi.css"></script>
+<script src="/path/to/dist/kagi.js"></script>
 ```
 
 # Usage
