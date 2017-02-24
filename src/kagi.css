@@ -1,0 +1,41 @@
+body{
+    font-size:12px;
+}
+
+path {
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: grey;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+
+.tooltip {
+	background: #fff;
+	box-shadow: 0 0 5px #999999;
+	color: #000;
+	font-size: 12px;
+	left: 130px;
+	padding: 4px;
+	position: absolute;
+	text-align: center;
+	top: 95px;
+	z-index: 10;
+	display: block;
+	opacity: 0;
+}
+
+table, thead, tbody, td, th {
+    border: 1px solid black;
+    padding:5px;
+}
+
+table{
+    border-collapse: collapse;
+}

@@ -1,0 +1,10 @@
+.formElement{
+    padding:4px;
+    width:100%;
+    font-size:16px;
+}
+
+.formElement span{
+    width: 50%;
+    display:inline-block;
+}
