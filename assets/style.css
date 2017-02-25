@@ -1,15 +1,3 @@
-.formElement{
-    padding:4px;
-    width:100%;
-    font-size:16px;
-}
-
-.formElement span{
-    width: 50%;
-    display:inline-block;
-}
-
-
 a {
   color: #1e6bb8;
   text-decoration: none;
@@ -26,69 +14,15 @@ a:hover {
   background-image: linear-gradient(120deg, #2c3e50, #3498db);
 }
 
-@media screen and (min-width: 64em) {
-  .page-header {
-    padding: 5rem 6rem;
-  }
-}
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-  .page-header {
-    padding: 3rem 4rem;
-  }
-}
-
-@media screen and (max-width: 42em) {
-  .page-header {
-    padding: 2rem 1rem;
-  }
-}
-
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
-}
-
-@media screen and (min-width: 64em) {
-  .project-name {
-    font-size: 3.25rem;
-  }
-}
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-  .project-name {
-    font-size: 2.25rem;
-  }
-}
-
-@media screen and (max-width: 42em) {
-  .project-name {
-    font-size: 1.75rem;
-  }
 }
 
 .project-tagline {
   margin-bottom: 2rem;
   font-weight: normal;
   opacity: 0.7;
-}
-
-@media screen and (min-width: 64em) {
-  .project-tagline {
-    font-size: 1.25rem;
-  }
-}
-
-@media screen and (min-width: 42em) and (max-width: 64em) {
-  .project-tagline {
-    font-size: 1.15rem;
-  }
-}
-
-@media screen and (max-width: 42em) {
-  .project-tagline {
-    font-size: 1rem;
-  }
 }
 
 .btn {
@@ -115,8 +49,22 @@ a:hover {
 }
 
 @media screen and (min-width: 64em) {
+
   .btn {
     padding: 0.75rem 1rem;
+    margin-right: 2rem;
+  }
+
+  .project-name {
+    font-size: 2.25rem;
+  }
+
+  .project-tagline {
+    font-size: 1.25rem;
+  }
+
+  .page-header {
+    padding: 4rem 3rem;
   }
 }
 
@@ -125,17 +73,62 @@ a:hover {
     padding: 0.6rem 0.9rem;
     font-size: 0.9rem;
   }
+
+  .project-tagline {
+    font-size: 1.15rem;
+  }
+
+  .page-header {
+    padding: 3rem 4rem;
+  }
+
+  .project-name {
+    font-size: 3.25rem;
+  }
+
+  .project-name {
+    font-size: 2.25rem;
+  }
+
 }
 
+
 @media screen and (max-width: 42em) {
+  .project-tagline {
+    font-size: 1rem;
+  }
+
+  .project-name {
+    font-size: 1.75rem;
+  }
+
   .btn {
     display: block;
-    width: 100%;
+    width: 100% - 2em;
     padding: 0.75rem;
     font-size: 0.9rem;
   }
+
   .btn + .btn {
     margin-top: 1rem;
     margin-left: 0;
   }
+
+  .page-header {
+    padding: 2rem 1rem;
+  }
+
+}
+
+table, th, tr, td{
+   border: 1px solid black;
+}
+
+table, th, tr, td{
+   border: 1px solid black;
+   padding: 5px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
 }

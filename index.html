@@ -12,10 +12,8 @@
           content="An open source javascript library to render beautiful Kagi charts using D3.js">
     <link rel="stylesheet" href="assets/main.css">
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/style.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="https://cdn.rawgit.com/arpitnarechania/d3-kagi/f66fcce9/dist/kagi.css"/>
+
 
 </head>
 
@@ -23,29 +21,6 @@
 <body>
 
 <header class="site-header" role="banner">
-
-    <!--<div class="wrapper">-->
-
-        <!--<a class="site-title" href="/">D3-Kagi</a>-->
-
-        <!--<nav class="site-nav">-->
-      <!--<span class="menu-icon">-->
-        <!--<svg viewBox="0 0 18 15" width="18px" height="15px">-->
-            <!--<path fill="#424242"-->
-                  <!--d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>-->
-            <!--<path fill="#424242"-->
-                  <!--d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>-->
-            <!--<path fill="#424242"-->
-                  <!--d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>-->
-        <!--</svg>-->
-      <!--</span>-->
-
-            <!--<div class="trigger">-->
-
-            <!--</div>-->
-        <!--</nav>-->
-    <!--</div>-->
-
     <section class="page-header">
           <h1 class="project-name">d3-kagi</h1>
           <h2 class="project-tagline">An open source javascript library to render Kagi charts using D3.js</h2>
@@ -58,132 +33,139 @@
 <main class="page-content" aria-label="Content">
     <div class="wrapper" id="container">
         <div id="kagiChart"></div>
-
-        <div id="settings">
-            <div class="formElement">
-                <span>Chart Theme</span>
-                <select id="chartTheme" onchange="changeChartTheme(this)">
-                    <option value="light" selected>Light</option>
-                    <option value="dark">Dark</option>
-                </select>
-            </div>
-            <div class="formElement">
-                <span>Caption</span>
-                <input id="caption" type="text" value="Apple Stock Closing Prices" onchange="changeCaption(this)">
-            </div>
-            <div class="formElement">
-                <span>Sub caption</span>
-                <input id="subCaption" type="text" value="2015-01-02 to 2017-02-24" onchange="changeSubCaption(this)">
-            </div>
-            <div class="formElement">
-                <span>Reversal Type</span>
-                <select id="reversalType" onchange="changeReversalType(this)">
-                    <option value="diff" selected>Difference</option>
-                    <option value="pct">Percentage</option>
-                </select>
-            </div>
-            <div class="formElement">
-                <span>Reversal Value</span>
-                <input id="reversalValue" type="number" value="5" onchange="changeReversalValue(this)">
-            </div>
-            <div class="formElement">
-                <span>Rally Color</span>
-                <input id="rallyColor" type="color" value="#2ecc71" onchange="changeRallyColor(this)">
-            </div>
-            <div class="formElement">
-                <span>Rally Thickness</span>
-                <input id="rallyThickness" type="number" value="3" onchange="changeRallyThickness(this)">
-            </div>
-            <div class="formElement">
-                <span>Rally Thickness On Hover</span>
-                <input id="rallyThicknessOnHover" type="number" value="5" onchange="changeRallyThicknessOnHover(this)">
-            </div>
-            <div class="formElement">
-                <span>Decline Color</span>
-                <input id="declineColor" type="color" value="#e74c3c" onchange="changeDeclineColor(this)">
-            </div>
-            <div class="formElement">
-                <span>Decline Thickness</span>
-                <input id="declineThickness" type="number" value="2" onchange="changeDeclineThickness(this)">
-            </div>
-            <div class="formElement">
-                <span>Decline Thickness On Hover</span>
-                <input id="declineThicknessOnHover" type="number" value="4"
-                       onchange="changeDeclineThicknessOnHover(this)">
-            </div>
-            <div class="formElement">
-                <span>Show Breakpoints</span>
-                <input id="breakPoints" type='checkbox' onclick='showBreakPoints(this);' checked>
-            </div>
-            <div class="formElement">
-                <span>Breakpoints Color</span>
-                <input id="breakPointColor" type="color" value="#3498db" onchange="changeBreakPointColor(this)">
-            </div>
-            <div class="formElement">
-                <span>Breakpoint Radius</span>
-                <input id="breakPointRadius" type="number" value="2" onchange="changeBreakPointRadius(this)">
-            </div>
-            <div class="formElement">
-                <span>Breakpoint Radius On Hover</span>
-                <input id="breakPointRadiusOnHover" type="number" value="5"
-                       onchange="changeBreakPointRadiusOnHover(this)">
-            </div>
-            <div class="formElement">
-                <span>Show Breakpoint Text</span>
-                <input id="breakPointText" type='checkbox' onclick='showBreakPointText(this);' checked>
-            </div>
-            <div class="formElement">
-                <span>Show Breakpoint Tooltips</span>
-                <input id="breakPointTooltips" type='checkbox' onclick='showBreakPointTooltip(this);' checked>
-            </div>
-            <div class="formElement">
-                <span>Show Range Tooltips</span>
-                <input id="rangeTooltips" type='checkbox' onclick='showRangePointTooltips(this);' checked>
-            </div>
-            <div class="formElement">
-                <span>Show Legend</span>
-                <input id="legend" type='checkbox' onclick='showLegend(this);' checked>
-            </div>
-            <div class="formElement">
-                <span>Show Animation</span>
-                <input id="animation" type='checkbox' onclick='showAnimation(this);' checked>
-            </div>
-            <div class="formElement">
-                <span>Animation Duration (millis)</span>
-                <input id="animDuration" type="number" value="500" onclick='changeAnimDuration(this);'>
-            </div>
-            <div class="formElement">
-                <span>Animation Ease</span>
-                <select id="animEase" onchange="changeAnimEase(this)">
-                    <option value="linear" selected>linear</option>
-                    <option value="quadIn">quadIn</option>
-                    <option value="quadOut">quadOut</option>
-                    <option value="cubicIn">cubicIn</option>
-                    <option value="cubicOut">cubicOut</option>
-                    <option value="cubicInOut">cubicInOut</option>
-                    <option value="polyIn">polyIn</option>
-                    <option value="polyOut">polyOut</option>
-                    <option value="polyInOut">polyInOut</option>
-                    <option value="sinIn">sinIn</option>
-                    <option value="sinOut">sinOut</option>
-                    <option value="sinInOut">sinInOut</option>
-                    <option value="expIn">expIn</option>
-                    <option value="expOut">expOut</option>
-                    <option value="expInOut">expInOut</option>
-                    <option value="circleIn">circleIn</option>
-                    <option value="circleOut">circleOut</option>
-                    <option value="circleInOut">circleInOut</option>
-                    <option value="bounceIn">bounceIn</option>
-                    <option value="bounceOut">bounceOut</option>
-                    <option value="bounceInOut">bounceInOut</option>
-                    <option value="backIn">backIn</option>
-                    <option value="backOut">backOut</option>
-                    <option value="backInOut">backInOut</option>
-                    <option value="elasticIn">elasticIn</option>
-                    <option value="elasticOut">elasticOut</option>
-                    <option value="elasticInOut">elasticInOut</option>
-                </select>
-            </div>
+        <div id="controls" style="overflow-x:auto;">
+            <table>
+                <tr class="formElement">
+                    <td><span>Chart Theme</span></td>
+                    <td>
+                        <select id="chartTheme" onchange="changeChartTheme(this)">
+                            <option value="light" selected>Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Caption</span></td>
+                    <td><input id="caption" type="text" value="Apple Stock Closing Prices" onchange="changeCaption(this)"></td>
+                </tr>
+                <tr >
+                    <td><span>Sub caption</span></td>
+                    <td><input id="subCaption" type="text" value="2015-01-02 to 2017-02-24" onchange="changeSubCaption(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Reversal Type</span></td>
+                    <td>
+                        <select id="reversalType" onchange="changeReversalType(this)">
+                            <option value="diff" selected>Difference</option>
+                            <option value="pct">Percentage</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Reversal Value</span></td>
+                    <td><input id="reversalValue" type="number" value="5" onchange="changeReversalValue(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Rally Color</span></td>
+                    <td><input id="rallyColor" type="color" value="#2ecc71" onchange="changeRallyColor(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Rally Thickness</span></td>
+                    <td><input id="rallyThickness" type="number" value="3" onchange="changeRallyThickness(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Rally Thickness On Hover</span></td>
+                    <td><input id="rallyThicknessOnHover" type="number" value="5" onchange="changeRallyThicknessOnHover(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Decline Color</span></td>
+                    <td><input id="declineColor" type="color" value="#e74c3c" onchange="changeDeclineColor(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Decline Thickness</span></td>
+                    <td><input id="declineThickness" type="number" value="2" onchange="changeDeclineThickness(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Decline Thickness On Hover</span></td>
+                    <td><input id="declineThicknessOnHover" type="number" value="4"
+                           onchange="changeDeclineThicknessOnHover(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Show Breakpoints</span></td>
+                    <td><input id="breakPoints" type='checkbox' onclick='showBreakPoints(this);' checked></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Breakpoints Color</span></td>
+                    <td><input id="breakPointColor" type="color" value="#3498db" onchange="changeBreakPointColor(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Breakpoint Radius</span></td>
+                    <td><input id="breakPointRadius" type="number" value="2" onchange="changeBreakPointRadius(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Breakpoint Radius On Hover</span></td>
+                    <td><input id="breakPointRadiusOnHover" type="number" value="5"
+                           onchange="changeBreakPointRadiusOnHover(this)"></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Show Breakpoint Text</span></td>
+                    <td><input id="breakPointText" type='checkbox' onclick='showBreakPointText(this);' checked></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Show Breakpoint Tooltips</span></td>
+                    <td><input id="breakPointTooltips" type='checkbox' onclick='showBreakPointTooltip(this);' checked></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Show Range Tooltips</span></td>
+                    <td><input id="rangeTooltips" type='checkbox' onclick='showRangePointTooltips(this);' checked></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Show Legend</span></td>
+                    <td><input id="legend" type='checkbox' onclick='showLegend(this);' checked></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Show Animation</span></td>
+                    <td><input id="animation" type='checkbox' onclick='showAnimation(this);' checked></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Animation Duration (millis)</span></td>
+                    <td><input id="animDuration" type="number" value="500" onclick='changeAnimDuration(this);'></td>
+                </tr>
+                <tr class="formElement">
+                    <td><span>Animation Ease</span></td>
+                    <td>
+                        <select id="animEase" onchange="changeAnimEase(this)">
+                            <option value="linear" selected>linear</option>
+                            <option value="quadIn">quadIn</option>
+                            <option value="quadOut">quadOut</option>
+                            <option value="cubicIn">cubicIn</option>
+                            <option value="cubicOut">cubicOut</option>
+                            <option value="cubicInOut">cubicInOut</option>
+                            <option value="polyIn">polyIn</option>
+                            <option value="polyOut">polyOut</option>
+                            <option value="polyInOut">polyInOut</option>
+                            <option value="sinIn">sinIn</option>
+                            <option value="sinOut">sinOut</option>
+                            <option value="sinInOut">sinInOut</option>
+                            <option value="expIn">expIn</option>
+                            <option value="expOut">expOut</option>
+                            <option value="expInOut">expInOut</option>
+                            <option value="circleIn">circleIn</option>
+                            <option value="circleOut">circleOut</option>
+                            <option value="circleInOut">circleInOut</option>
+                            <option value="bounceIn">bounceIn</option>
+                            <option value="bounceOut">bounceOut</option>
+                            <option value="bounceInOut">bounceInOut</option>
+                            <option value="backIn">backIn</option>
+                            <option value="backOut">backOut</option>
+                            <option value="backInOut">backInOut</option>
+                            <option value="elasticIn">elasticIn</option>
+                            <option value="elasticOut">elasticOut</option>
+                            <option value="elasticInOut">elasticInOut</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </main>
@@ -230,6 +212,9 @@
 </footer>
 </body>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<link rel="stylesheet" type="text/css"
+      href="https://cdn.rawgit.com/arpitnarechania/d3-kagi/f66fcce9/dist/kagi.css"/>
 <script type="text/javascript" src="https://cdn.rawgit.com/arpitnarechania/d3-kagi/f66fcce9/dist/kagi.js"></script>
 <script type="text/javascript" src="data/data.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
