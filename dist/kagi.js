@@ -1,3 +1,31 @@
+/*
+
+@author: Arpit Narechania
+@email: arpitnarechania@gmail.com
+@project: d3-kagi
+
+Copyright 2017 Arpit Narechania
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
 function KagiChart(data,chart_options){
 
     var inputData = data;
@@ -30,88 +58,71 @@ function KagiChart(data,chart_options){
     var animationEase = chart_options["animationEase"];
 
     if(isNaN(reversalValue)){
-       console.log("reversalValue must be a numeric entity");
-       return;
+    	throw new Error('reversalValue must be a numeric entity');
     }
 
     if(isNaN(rallyThickness)){
-       console.log("rallyThickness must be a numeric entity");
-       return;
+       throw new Error("rallyThickness must be a numeric entity");
     }
 
     if(isNaN(declineThickness)){
-       console.log("declineThickness must be a numeric entity");
-       return;
+       throw new Error("declineThickness must be a numeric entity");
     }
 
     if(isNaN(width)){
-       console.log("width must be a numeric entity");
-       return;
+       throw new Error("width must be a numeric entity");
     }
 
     if(isNaN(height)){
-       console.log("height must be a numeric entity");
-       return;
+       throw new Error("height must be a numeric entity");
     }
 
     if(isNaN(animationDurationPerTrend)){
-       console.log("animationDurationPerTrend must be a numeric entity");
-       return;
+       throw new Error("animationDurationPerTrend must be a numeric entity");
     }
 
     if(!(reversalType.localeCompare("pct") || reversalType.localeCompare("diff"))){
-       console.log("Valid reversalType are 'pct' and 'diff'");
-       return;
+       throw new Error("Valid reversalType are 'pct' and 'diff'");
     }
 
     if(Object.prototype.toString.call( inputData ) != '[object Array]') {
-       console.log("inputData must be an array");
-       return;
+       throw new Error("inputData must be an array");
     }
 
     if(typeof(showAnimation) != "boolean"){
-       console.log("showAnimation must be a boolean entity");
-       return;
+       throw new Error("showAnimation must be a boolean entity");
     }
 
     if(typeof(showLegend) != "boolean"){
-       console.log("showLegend must be a boolean entity");
-       return;
+       throw new Error("showLegend must be a boolean entity");
     }
 
     if(typeof(showRangeTooltips) != "boolean"){
-       console.log("showRangeTooltips must be a boolean entity");
-       return;
+       throw new Error("showRangeTooltips must be a boolean entity");
     }
 
     if(typeof(showBreakPointTooltips) != "boolean"){
-       console.log("showBreakPointTooltips must be a boolean entity");
-       return;
+       throw new Error("showBreakPointTooltips must be a boolean entity");
     }
 
     if(typeof(showBreakPointText) != "boolean"){
-       console.log("showBreakPointText must be a boolean entity");
-       return;
+       throw new Error("showBreakPointText must be a boolean entity");
     }
 
     if(typeof(showBreakPoints) != "boolean"){
-       console.log("showBreakPoints must be a boolean entity");
-       return;
+       throw new Error("showBreakPoints must be a boolean entity");
     }
 
     if(typeof(isPrecedingUnit) != "boolean"){
-       console.log("isPrecedingUnit must be a boolean entity");
-       return;
+       throw new Error("isPrecedingUnit must be a boolean entity");
     }
 
     if(inputData[0] == []){
-       console.log("inputData seems empty.");
-       return;
+       throw new Error("inputData is empty.");
     }
 
     if(!('close' in inputData[0] && 'date' in inputData[0])){
-       console.log("inputData array must contain objects with keys:- 'date' and 'close'");
-       return;
+       throw new Error("inputData array must contain objects with keys:- 'date' and 'close'");
     }
 
     // Preprocess the data and generate the initial set of coordinates which have to be plotted.
