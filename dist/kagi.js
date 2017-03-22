@@ -410,7 +410,7 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     // This aspect of code takes care of the Responsive nature of the div.
-    var aspect = width / height;
+    var aspect = (width + margin.left + margin.right) / (height + margin.top + margin.bottom );
     $(window).on("resize", function() {
         var targetWidth = $("#kagiChart").width();
 
@@ -420,7 +420,7 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
         }
 
         d3.select(".kagiChartClass")
-            .attr("width", targetWidth)
+            .attr("width", targetWidth + margin.left + margin.right)
             .attr("height", Math.round(targetWidth / aspect));
     }).trigger("resize");
 
