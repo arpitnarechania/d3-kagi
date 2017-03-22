@@ -415,7 +415,7 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
         var targetWidth = $("#kagiChart").width();
 
         // Otherwise the default settings of width and height will be compromised.
-        if (targetWidth > width) {
+        if (targetWidth > width + margin.left + margin.right) {
             return;
         }
 
