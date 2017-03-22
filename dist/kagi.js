@@ -401,7 +401,7 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
     var	svg = d3.select("#kagiChart")
         .append("svg")
         .attr("class","kagiChartClass")
-        .attr("viewBox", "0 0 " + width + " " + height)
+        .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
         .style("background",chartTheme=='light' ? "#ffffff" : "#000000")
         .attr("fill",chartTheme=='light' ? "#000000" : "#ffffff")
         .attr("width", width + margin.left + margin.right)
