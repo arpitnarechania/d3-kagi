@@ -24,5 +24,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "d3": "3.5.17",
+    "jquery": "^3.2.1"
+  }
 }
