@@ -420,7 +420,7 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
         }
 
         d3.select(".kagiChartClass")
-            .attr("width", targetWidth + margin.left + margin.right)
+            .attr("width", targetWidth - margin.left - margin.right)
             .attr("height", Math.round(targetWidth / aspect));
     }).trigger("resize");
 
