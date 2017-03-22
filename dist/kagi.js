@@ -400,12 +400,29 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
     // Adds the svg canvas
     var	svg = d3.select("#kagiChart")
         .append("svg")
+        .attr("class","kagiChartClass")
+        .attr("viewBox", "0 0 " + width + " " + height)
         .style("background",chartTheme=='light' ? "#ffffff" : "#000000")
         .attr("fill",chartTheme=='light' ? "#000000" : "#ffffff")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    // This aspect of code takes care of the Responsive nature of the div.
+    var aspect = width / height;
+    $(window).on("resize", function() {
+        var targetWidth = $("#kagiChart").width();
+
+        // Otherwise the default settings of width and height will be compromised.
+        if (targetWidth > width) {
+            return;
+        }
+
+        d3.select(".kagiChartClass")
+            .attr("width", targetWidth)
+            .attr("height", Math.round(targetWidth / aspect));
+    }).trigger("resize");
 
    // Get the maxima and minima of Y axis
     var yMax = d3.max(data, function(row) { return d3.max(row.p, function(d) { return d.close; }); });
