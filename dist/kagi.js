@@ -338,6 +338,7 @@ function add_base_shoulder_points(data){
     return data;
 }
 
+
 // This function makes the dataset which is fed to the d3.js library to render as svg
 // Here, based on to_break metric, formatting options like thickness, colors are added.
 function generate_yang_ying_lines(data,rallyThickness,declineThickness,rallyColor,declineColor){
@@ -410,17 +411,17 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     // This aspect of code takes care of the Responsive nature of the div.
-    var aspect = (width + margin.left + margin.right) / (height + margin.top + margin.bottom );
+    var aspect = (width + margin.right) / (height + margin.top + margin.bottom );
     $(window).on("resize", function() {
         var targetWidth = $("#kagiChart").width();
 
         // Otherwise the default settings of width and height will be compromised.
-        if (targetWidth > width + margin.left + margin.right) {
+        if (targetWidth > width + margin.right) {
             return;
         }
 
         d3.select(".kagiChartClass")
-            .attr("width", targetWidth - margin.left - margin.right)
+            .attr("width", targetWidth - margin.right)
             .attr("height", Math.round(targetWidth / aspect));
     }).trigger("resize");
 
