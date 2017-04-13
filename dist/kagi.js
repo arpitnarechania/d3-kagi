@@ -559,11 +559,13 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
+        .attr("shape-rendering","geometricPrecision")
         .call(xAxis);
 
     // Add the Y Axis
     svg.append("g")
         .attr("class", "y axis")
+        .attr("shape-rendering","geometricPrecision")
         .call(yAxis);
 
     if(showRangeTooltips){
