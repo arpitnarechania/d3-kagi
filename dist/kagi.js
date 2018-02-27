@@ -81,7 +81,7 @@ function KagiChart(data,chart_options){
        throw new Error("animationDurationPerTrend must be a numeric entity");
     }
 
-    if(!(reversalType.localeCompare("pct") || reversalType.localeCompare("diff"))){
+    if(reversalType.localeCompare("pct") != 0 && reversalType.localeCompare("diff") != 0)){
        throw new Error("Valid reversalType are 'pct' and 'diff'");
     }
 
@@ -195,14 +195,14 @@ function preprocess_data(data, reversalType, reversalValue){
        }else if(diff<0){
             trend = '-'; // It is negative
        }else if(diff==0){
-            trend = trends[i-i]; // Values seem equal. Continue the previous trend.
+            trend = trends[i-1]; // Values seem equal. Continue the previous trend.
        }
 
        // Set current trend to that of calculated above.
        trends[i] = trend;
 
        var value_to_compare = 0;
-       if(reversalType.localeCompare("diff")){
+       if(reversalType.localeCompare("diff") == 0){
            value_to_compare = diff; // If reversalType is difference then just have to compare the change in value
        }else{
            value_to_compare = diff/last_close * 100; // If reversalType is pct then compute the change in value and compare
