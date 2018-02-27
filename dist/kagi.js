@@ -81,7 +81,7 @@ function KagiChart(data,chart_options){
        throw new Error("animationDurationPerTrend must be a numeric entity");
     }
 
-    if(reversalType.localeCompare("pct") != 0 && reversalType.localeCompare("diff") != 0)){
+    if(reversalType.localeCompare("pct") != 0 && reversalType.localeCompare("diff") != 0){
        throw new Error("Valid reversalType are 'pct' and 'diff'");
     }
 
